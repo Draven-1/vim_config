@@ -1,2 +1,2 @@
 # vim_config
-vim for c/++ go python 
+vim for c/c++ go python 

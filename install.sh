@@ -13,18 +13,24 @@
 ##切换到 root 用户
 #SwitchRoot
 
-#1.将vim_tool.tar.bz2包放到用户的家目录下解压
-    #下载地址 百度云链接：https://pan.baidu.com/s/1kbyY0cGCB3e-x57fTSqg1g:7777 
-    #安装好vim_tool 之后用git仓库中的.vimrc 和 .bashrc 覆盖家目录下的
+#源码编译vim、gcc、python3参数
+    vim 最好只支持python3 如果同时支持python3 和 python2会遇到些问题。(https://github.com/ycm-core/YouCompleteMe/issues/3635) 
+    #vim：./configure --with-features=huge --enable-rubyinterp=yes --enable-luainterp=yes --enable-perlinterp=yes --enable-python3interp=yes --enable-fontset=yes --enable-cscope=yes --enable-multibyte --disable-gui --enable-fail-if-missing --prefix=$HOME/.usr/vim --with-compiledby='lichao'
+
+    gcc：./configure --enable-languages=c,c++,go --disable-multilib --with-system-zlib --prefix=$HOME/lc/usr/gcc
+
+    python3.6.8 ./configure --prefix=/usr/local/python3 --enable-optimizations --enable-shared 
+    #python有静态加载和动态加载两种方式，我们选择动态加载，因此编译时参数打开动态链接
+
+安装方法与步骤：
+#1.将vim_tool.tar.bz2包放到用户的家目录下解压 tar -jxvf
+    下载地址 百度云链接：https://pan.baidu.com/s/1xmASXXm46SO7Jcvpcrto9Q:7777 
+    安装好vim_tool 之后用git仓库中的.vimrc 和 .bashrc 覆盖家目录下的
 
 #2.安装python3.6
     #将python3的包放到 /usr/local/目录下解压
     在 /etc/ld.so.conf 文件中添加  /usr/local/python3/lib/
     export PATH=$PATH:/usr/local/python3/bin 添加到 /etc/profile
-    #创建软连接：
-    #vim 编译时的python3配置路径
-    mkdir /usr/lib64/python3.6
-    ln -s /usr/local/python3/lib/python3.6/config-3.6m-x86_64-linux-gnu  /usr/lib64/python3.6/config-3.6m-x86_64-linux-gnu
 
 #3.安装git-2.32
     #git token验证 git remote set-url origin https://token值@github.com/用户名/仓库名
@@ -38,9 +44,11 @@
     export PATH=$PATH:/usr/local/gtags/ 添加到 /etc/profile
     在 /etc/ld.so.conf 文件中添加  /usr/local/gtags/lib/
 
-#5.解决vim依赖库 ./vim_depend_lib 目录下存放了些依赖库
-    #ldd .usr/vim/bin/vim   
-    #将not find 的库拷贝到/lib64/ 目录下 注意：只拷贝not find的
+#5.解决vim依赖库 ./vim_depend_lib 目录下存放了一些动态库供选择
+    ldd .usr/vim/bin/vim   
+    #在用户家目录下的 .usr 目录中创建 lib 目录，将not find的库拷贝到 ~/.usr/lib 目录下   注意：只拷贝not find的
+    在 /etc/ld.so.conf 文件中添加  /home/lc/.usr/lib/  /home/lc/.usr/gcc/lib64/
+
 
 #6.解决ycm的依赖库
     sudo rm /usr/lib64/libstdc++.so.6
@@ -49,4 +57,4 @@
 
 #7.收尾
     sudo ldconfig
-    ource ~/.bashrc
+    source ~/.bashrc

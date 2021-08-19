@@ -1,5 +1,7 @@
 #得确保安装了 python3 git2.0以上版本
 
+#TODO后续将以下步骤写为脚本，以达到一键安装的效果
+
 ##切换到 root 用户, 并且触发安装脚本
 #install_user_home=$HOME
 #
@@ -38,6 +40,7 @@
     #用 git config --global --unset https.proxy 解决
     #将git的包放到 /usr/local/ 目录下解压 打开 /etc/profile 文件添加下一行内容，退出执行 source /etc/profile
     export PATH=$PATH:/usr/local/git/bin
+    yum remove git #安装完卸载旧版git
 
 #4.安装gtags-6.6.6
     #将gtags的包放到 /usr/local/ 目录下解压

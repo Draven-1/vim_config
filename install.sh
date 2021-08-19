@@ -38,8 +38,9 @@
     export PATH=$PATH:/usr/local/gtags/ 添加到 /etc/profile
     在 /etc/ld.so.conf 文件中添加  /usr/local/gtags/lib/
 
-#5.TODO将vim依赖的库拷贝一份，最后拷贝到 /lib64/ 目录下
-    #ldd .usr/vim/bin/vim  
+#5.解决vim依赖库 ./vim_depend_lib 目录下存放了些依赖库
+    #ldd .usr/vim/bin/vim   
+    #将not find 的库拷贝到/lib64/ 目录下 注意：只拷贝not find的
 
 #6.解决ycm的依赖库
     sudo rm /usr/lib64/libstdc++.so.6

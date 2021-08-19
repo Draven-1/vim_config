@@ -7,7 +7,7 @@
 #function SwitchRoot() {
 #  echo "为了安装依赖程序, 需要使用 root 账户. 您的密码不会被上传."
 #  echo "请输入 root 密码:"
-#  su -c "curl -sLf https://gitee.com/raw/master/start.sh -o /tmp/start.sh && bash /tmp/start.sh $install_user_home"
+#  su -c "curl -sLf https:******** -o /tmp/start.sh && bash /tmp/start.sh $install_user_home"
 #  rm -f /tmp/start.sh > /dev/null 2>&1
 #}
 #
@@ -16,6 +16,7 @@
 
 #1.将vim_tool.tar.bz2包放到用户的家目录下解压
     #下载地址 百度云链接：https://pan.baidu.com/s/1kbyY0cGCB3e-x57fTSqg1g  提取码：7777 
+    #安装好vim_tool 之后用git仓库中的.vimrc 和 .bashrc 覆盖家目录下的
 
 #2.安装python3.6
     #将python3的包放到 /usr/local/目录下解压
@@ -47,4 +48,4 @@
 
 #7.收尾
     sudo ldconfig
-    source ~/.bashrc
+    ource ~/.bashrc

@@ -1,9 +1,5 @@
 #!/usr/bin/sh
 #得确保安装了 python3 git2.0以上版本
-#安装git-lfs
-#sudo yum install git-lfs
-#git lfs install 开启lfs功能
-#git lfs track + 大文件名称
 
 ##切换到 root 用户, 并且触发安装脚本
 #install_user_home=$HOME
@@ -18,8 +14,8 @@
 ##切换到 root 用户
 #SwitchRoot
 
-#1.安装vim tools
-    #将vim.tar.bz2 和 usr.tar.bz2 包放到用户的家目录下解压 tar -jxvf
+#1.将vim_tool.tar.bz2包放到用户的家目录下解压
+    #下载地址 百度云链接：https://pan.baidu.com/s/1kbyY0cGCB3e-x57fTSqg1g  提取码：7777 
 
 #2.安装python3.6
     #将python3的包放到 /usr/local/目录下解压

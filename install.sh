@@ -18,7 +18,8 @@
 ##切换到 root 用户
 #SwitchRoot
 
-#1.将code_vim.tgz包放到用户的家目录下解压
+#1.安装vim tools
+    #将vim.tar.bz2 和 usr.tar.bz2 包放到用户的家目录下解压 tar -jxvf
 
 #2.安装python3.6
     #将python3的包放到 /usr/local/目录下解压
@@ -30,6 +31,8 @@
 
 #3.安装git-2.32
     #git token验证 git remote set-url origin https://token值@github.com/用户名/仓库名
+    #遇到 fatal: unable to access 'https://github.com/Draven-1/vim_config.git/': Encountered end of file
+    #用 git config --global --unset https.proxy 解决
     #将git的包放到 /usr/local/ 目录下解压 打开 /etc/profile 文件添加下一行内容，退出执行 source /etc/profile
     export PATH=$PATH:/usr/local/git/
 

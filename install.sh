@@ -14,15 +14,16 @@
 #SwitchRoot
 
 #1.将vim_tool.tar.bz2包放到用户的家目录下解压
-    #下载地址 百度云链接：https://pan.baidu.com/s/1kbyY0cGCB3e-x57fTSqg1g  提取码：7777 
+    #下载地址 百度云链接：https://pan.baidu.com/s/1kbyY0cGCB3e-x57fTSqg1g:7777 
     #安装好vim_tool 之后用git仓库中的.vimrc 和 .bashrc 覆盖家目录下的
 
 #2.安装python3.6
     #将python3的包放到 /usr/local/目录下解压
     在 /etc/ld.so.conf 文件中添加  /usr/local/python3/lib/
-    export PATH=$PATH:/usr/local/python3/ 添加到 /etc/profile
+    export PATH=$PATH:/usr/local/python3/bin 添加到 /etc/profile
     #创建软连接：
     #vim 编译时的python3配置路径
+    mkdir /usr/lib64/python3.6
     ln -s /usr/local/python3/lib/python3.6/config-3.6m-x86_64-linux-gnu  /usr/lib64/python3.6/config-3.6m-x86_64-linux-gnu
 
 #3.安装git-2.32
@@ -30,7 +31,7 @@
     #遇到 fatal: unable to access 'https://github.com/Draven-1/vim_config.git/': Encountered end of file
     #用 git config --global --unset https.proxy 解决
     #将git的包放到 /usr/local/ 目录下解压 打开 /etc/profile 文件添加下一行内容，退出执行 source /etc/profile
-    export PATH=$PATH:/usr/local/git/
+    export PATH=$PATH:/usr/local/git/bin
 
 #4.安装gtags-6.6.6
     #将gtags的包放到 /usr/local/ 目录下解压

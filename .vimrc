@@ -143,7 +143,7 @@ set autoread
 set noshowmode
 set timeoutlen=3000
 set updatetime=100
-language messages zh_CN.utf-8 
+"language messages zh_CN.utf-8
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o  "在注释行上下插入行不会自动插入注释字符
 set cursorline                          "高亮当前行
 "set cursorcolumn                        "高亮当前列
@@ -171,7 +171,7 @@ let g:ycm_key_list_stop_completion = ['<C-y>']    	"设置用于关闭补全列�
 let g:ycm_key_invoke_completion = '<C-s>'		    "设置强制启用语义补全的快捷键
 "let g:ycm_key_detailed_diagnostics = '<leader>d'	"设置查看光标停留处的错误诊断详细信息的快捷键,默认为\d
 let g:ycm_filepath_completion_use_working_dir = 0 	"设置YCM的文件名补全时，相对路径是按照vim的当前工作目录还是活动缓冲区中的文件所在目录来解释。0是按照文件所在目录
-let g:ycm_cache_omnifunc=0 							"某些omni补全引擎引起与YCM缓存不适配，可能不会为给定的前缀产生所有可能的结果，如果关闭该选项则每次都重新查询omni补全引擎生成匹配项 ，默认为1代表开启
+let g:ycm_cache_omnifunc=1 							"某些omni补全引擎引起与YCM缓存不适配，可能不会为给定的前缀产生所有可能的结果，如果关闭该选项则每次都重新查询omni补全引擎生成匹配项 ，默认为1代表开启
 let g:ycm_use_ultisnips_completer = 1				"启用ultisnips补全，1代表允许
 let g:ycm_auto_hover = ''                           "关闭光标静止弹出原型
 let g:ycm_max_diagnostics_to_display = 0            "诊断数量无上限
@@ -180,18 +180,20 @@ nmap <leader>D <plug>(YCMHover)
 
 "光标下标识符的重命名
 nnoremap <leader>rn :YcmCompleter RefactorRename 
-"函数列表
-nnoremap <leader>fl :YcmCompleter GoToDocumentOutline<CR>    
+"函数列表 关闭ycm自带的打开quickfix，用copen 打开 并将窗口移到左边显示 (ycm自动打开的quikfix在跳转的时候会自动关闭)
+nnoremap <leader>fl :YcmCompleter GoToDocumentOutline<CR> <c-w>w :copen<CR> <c-w>L
 "跳转到定义或声明
-nnoremap <c-k> :YcmCompleter GoToDefinitionElseDeclaration<CR>	
+nnoremap <c-h> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "跳转到实现
 nnoremap <c-j> :YcmCompleter GoTo<CR>
 "更准确性能差
-nnoremap <c-l> :YcmCompleter GoToImprecise<CR>
+nnoremap <c-k> :YcmCompleter GoToImprecise<CR>
 "跳转到include
-nnoremap <c-h> :YcmCompleter GoToInclude<CR>
-"跳转到引用
-nnoremap <c-q> :YcmCompleter GoToReferences<CR>
+"nnoremap <c-h> :YcmCompleter GoToInclude<CR>
+
+"跳转到引用, 关闭ycm自带的打开quickfix，用copen 打开 并将窗口移到上方显示 (ycm自动打开的quikfix在跳转的时候会自动关闭)
+nnoremap <c-q> :YcmCompleter GoToReferences<CR><c-w>w :copen<CR> <c-w>K
+
 let g:ycm_error_symbol = 'x'
 let g:ycm_warning_symbol = 'w'
 "语义补全触发条件
@@ -199,6 +201,18 @@ let g:ycm_semantic_triggers =  {
 			\ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
 			\ 'cs,lua,javascript': ['re!\w{2}'],
 			\ }
+
+let g:ycm_filetype_whitelist = { 
+			\ "c":1,
+            \ "cpp":1, 
+            \ "objc":1,
+			\ "sh":1,
+			\ "python":1,
+			\ "go":1,
+			\ "make":1,
+            \}
+
+
 "弹窗配色
 "highlight PMenu ctermfg=0 ctermbg=242 guifg=black guibg=darkgrey
 "highlight PMenuSel ctermfg=242 ctermbg=8 guifg=darkgrey guibg=black
@@ -235,6 +249,7 @@ let g:NERDToggleCheckAllLines = 1               "启用NERDCommenterToggle来检
 "nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <F1> :NERDTreeToggle<CR>
 nnoremap <C-n> :NERDTreeFind<CR>
+let NERDTreeIgnore = [ '\.pyc$', '\.pyo$', '\.obj$', '\.o$', '\.egg$', '^\.git$', '^\.repo$', '^\.svn$', '^\.hg$' ]
 
 """"""""""""""""vim-devicons"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "let g:webdevicons_enable_nerdtree = 1

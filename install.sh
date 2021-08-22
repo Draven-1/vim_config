@@ -16,7 +16,7 @@
 #SwitchRoot
 
 #源码编译vim、gcc、python3参数
-    vim 最好只支持python3 如果同时支持python3 和 python2会遇到些问题。(https://github.com/ycm-core/YouCompleteMe/issues/3635) 
+    #vim 最好只支持python3 如果同时支持python3 和 python2会遇到些问题。(https://github.com/ycm-core/YouCompleteMe/issues/3635) 
     #vim：./configure --with-features=huge --enable-rubyinterp=yes --enable-luainterp=yes --enable-perlinterp=yes --enable-python3interp=yes --enable-fontset=yes --enable-cscope=yes --enable-multibyte --disable-gui --enable-fail-if-missing --prefix=$HOME/.usr/vim --with-compiledby='lichao'
 
     gcc：./configure --enable-languages=c,c++,go --disable-multilib --with-system-zlib --prefix=$HOME/lc/usr/gcc
@@ -46,6 +46,7 @@
     #将gtags的包放到 /usr/local/ 目录下解压
     export PATH=$PATH:/usr/local/gtags/ 添加到 /etc/profile
     在 /etc/ld.so.conf 文件中添加  /usr/local/gtags/lib/
+    在/usr/local/python3/lib/python3.6/site-packages 目录下解压 pygments.tar.gz
 
 #5.解决vim依赖库 ./vim_depend_lib 目录下存放了一些动态库供选择
     ldd .usr/vim/bin/vim   

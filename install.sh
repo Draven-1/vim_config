@@ -46,19 +46,31 @@
     #将gtags的包放到 /usr/local/ 目录下解压
     export PATH=$PATH:/usr/local/gtags/ 添加到 /etc/profile
     在 /etc/ld.so.conf 文件中添加  /usr/local/gtags/lib/
-    在/usr/local/python3/lib/python3.6/site-packages 目录下解压 pygments.tar.gz
+    #用pip install pygments 安装pygments(不要用pip3安装,python3对于pygments有一些bug,导致gtags不能正常使用)
+    #或者将 pygments.tar.gz 的包放到/usr/lib/python2.7/site-packages/pygments 目录下解压
 
 #5.解决vim依赖库 ./vim_depend_lib 目录下存放了一些动态库供选择
     ldd .usr/vim/bin/vim   
     #在用户家目录下的 .usr 目录中创建 lib 目录，将not find的库拷贝到 ~/.usr/lib 目录下   注意：只拷贝not find的
     在 /etc/ld.so.conf 文件中添加  /home/lc/.usr/lib/  /home/lc/.usr/gcc/lib64/
 
-
 #6.解决ycm的依赖库
     sudo rm /usr/lib64/libstdc++.so.6
     sudo cp $HOME/.usr/gcc/lib64/libstdc++.so.6.0.28 /usr/lib64/
     sudo ln -s /usr/lib64/libstdc++.so.6.0.28 /usr/lib64/libstdc++.so.6
 
-#7.收尾
+#7.安装golang
+    https://golang.org/doc/install
+    export GOROOT=/usr/local/go             设置GOROOT
+    export GOPATH=/home/lc/code/golang      设置GOPATH
+
+#8.安装ShellCheck 用于shell语法检测
+    #方法一：
+    yum install epel-release
+    yum install ShellCheck
+    #方法二：
+    #用rpm 包安装
+
+#9.收尾
     sudo ldconfig
     source ~/.bashrc

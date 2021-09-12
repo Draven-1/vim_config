@@ -28,7 +28,10 @@
 安装方法与步骤：
 #1.将vim_tool.tar.bz2包放到用户的家目录下解压 tar -jxvf
     下载地址 百度云链接：https://pan.baidu.com/s/1xmASXXm46SO7Jcvpcrto9Q:7777 
-    安装好vim_tool 之后用git仓库中的.vimrc 和 .bashrc 覆盖家目录下的
+    # 安装好vim_tool(vim8.2 和 gcc10) 之后用git仓库中的.vimrc 和 .bashrc 覆盖用户家目录下的
+    下载 vim_config.tar.gz(插件) 放到用户家目录下解压安装
+    链接：https://pan.baidu.com/s/1pJfXjn7_HYZjLOmnrqjjUQ 
+    提取码：7777 
 
 #2.安装python3.6
     #将python3的包放到 /usr/local/目录下解压

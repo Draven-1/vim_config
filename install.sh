@@ -75,6 +75,9 @@
 #10.安装flake8 用于python语法检测
     pip3 install flake8  #用压缩包安装有点麻烦，依赖的有点多。后续有时间可以整理一下相关库的压缩包
 
+#11.安装ctags
+    yum install ctags
+
 #11.收尾
     sudo ldconfig
     source ~/.bashrc

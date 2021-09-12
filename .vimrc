@@ -112,8 +112,6 @@ set termguicolors
 ""let g:material_theme_style = 'ocean-community'
 "colorscheme material
 
-"colorscheme luna-term
-
 "set background=dark " for the dark version
 "colorscheme one"
 
@@ -125,13 +123,13 @@ set termguicolors
 "let g:gruvbox_improved_warnings=1
 
 "neodark
-"let g:neodark#background = '#202020'
-"let g:neodark#use_256color = 1
-""背景色
-"let g:neodark#terminal_transparent = 1  "打开的话高亮看不清
-"""分屏边框实线
-""let g:neodark#solid_vertsplit = 1
-"colorscheme neodark
+" let g:neodark#background = '#202020'
+" let g:neodark#use_256color = 1
+" "背景色
+" "let g:neodark#terminal_transparent = 1  "打开的话高亮看不清
+" ""分屏边框实线
+" "let g:neodark#solid_vertsplit = 1
+" colorscheme neodark
 
 ""solarized
 "set background=dark
@@ -142,8 +140,6 @@ set background=dark
 "colorscheme solarized8_high
 "colorscheme solarized8_low
 colorscheme solarized8_flat
-"let g:solarized_visibility = 'high'
-let g:solarized_termtrans = 1  "背景透明
 
 
 "airline
@@ -151,13 +147,14 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_theme= 'onedark'
-"let g:airline_theme= 'solarized'
+" let g:airline_theme= 'solarized'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#whitespace#symbol = '!'
 let g:airline#extensions#tabline#enabled = 1
 set nu rnu
+" set nu
 set wildmenu
 set wrap
 set smartindent
@@ -188,9 +185,8 @@ filetype plugin indent on
 "set listchars=tab:>-,trail:-
 set autoindent
 set showmatch
-"set autowriteall
+" set autowriteall
 "set autoread
-set noshowmode
 set timeoutlen=3000
 set updatetime=100
 "language messages zh_CN.utf-8
@@ -204,7 +200,7 @@ set cursorline                          "高亮当前行
 let g:ycm_global_ycm_extra_conf = '.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
 let g:ycm_server_log_level = 'info'
 set completeopt=longest,menu,menuone,popup
-let g:ycm_add_preview_to_completeopt = 0			"自动弹出函数原型
+let g:ycm_add_preview_to_completeopt = 1			"自动弹出函数原型
 let g:ycm_complete_in_comments = 1 					"在注释输入中也能补全
 let g:ycm_complete_in_strings = 1 					"在字符串输入中也能补全
 let g:ycm_confirm_extra_conf=0 						"关闭加载.ycm_extra_conf.py提示
@@ -243,7 +239,7 @@ nnoremap <c-k> :YcmCompleter GoTo<CR>
 
 "跳转到引用, 关闭ycm自带的打开quickfix，用copen 打开 并将窗口移到上方显示 (ycm自动打开的quikfix在跳转的时候会自动关闭)
 "nnoremap <c-q> :YcmCompleter GoToReferences<CR><c-w>w :copen<CR> <c-w>K
-"nnoremap <c-q> :YcmCompleter GoToReferences<CR>
+nnoremap <c-q> :YcmCompleter GoToReferences<CR>
 
 let g:ycm_error_symbol = '✗'
 let g:ycm_warning_symbol = '⚠'
@@ -271,7 +267,7 @@ let g:ycm_filetype_whitelist = {
 "nerdcommenter
 "快速注释
 let g:NERDCreateDefaultMappings = 1             "创建默认的映射
-let g:NERDSpaceDelims = 0                       "默认情况下在注释分隔符后添加空格 
+let g:NERDSpaceDelims = 1                       "默认情况下在注释分隔符后添加空格 
 let g:NERDCompactSexyComs = 1                   "使用紧凑的语法来修饰多行注释
 let g:NERDDefaultAlign = 'left'                 "按行对齐的注释分隔符左对齐，而不是按照代码缩进对齐
 let g:NERDCommentEmptyLines = 1                 "允许注释和反转空行(在注释区域时很有用)
@@ -322,8 +318,32 @@ let g:gutentags_plus_nomap = 0      "使用默认的快捷键，将源码中定�
 "   ;gs 查看光标下符号的引用
 "   :gt 查找此文本字符串
 
+"leaderf
+let g:Lf_HideHelp = 1
+let g:Lf_ShortcutF = "<c-p>"
+"当前打开的buffer
+let g:Lf_ShortcutB = '<c-y>'
+"最近打开的文件
+noremap <c-h> :LeaderfMru<cr>
+"函数搜索
+noremap <c-t> :LeaderfFunction!<cr>
+" noremap <leader>fh :<C-U><C-R>=printf("LeaderfFunction! %s", "")<CR><CR>
+let g:Lf_RootMarkers = ['.project', '.root', '.svn', '.git']
+let g:Lf_WindowHeight = 0.30
+let g:Lf_CacheDirectory = expand('~/.vim/cache')
+"当前项目目录打开文件搜索
+let g:Lf_PreviewResult = {'Function':0, 'BufTag':0}
+
 "vim-preview
-"预览窗口  TODO 想办法搞定映射ALT键
+"滚动预览窗口
+noremap <c-m> :PreviewScroll -1<cr>
+noremap <c-n> :PreviewScroll +1<cr>
+" inoremap <c-m> <c-\><c-o>:PreviewScroll -1<cr>
+" inoremap <c-n> <c-\><c-o>:PreviewScroll +1<cr>
+autocmd FileType qf nnoremap <silent><buffer> p :PreviewQuickfix<cr>
+autocmd FileType qf nnoremap <silent><buffer> P :PreviewClose<cr>
+" noremap <F4> :PreviewSignature!<cr>
+" inoremap <F4> <c-\><c-o>:PreviewSignature!<cr>
 
 "vim-gitgutter
 "let g:gitgutter_map_keys = 0                            "不映射任何键
@@ -340,32 +360,32 @@ let g:ale_sign_column_always = 1
 let g:airline#extensions#ale#enabled = 1
 "Set this in your vimrc file to disabling highlighting
 let g:ale_set_highlights = 1
-
+let g:ale_echo_msg_format = '[%linter%] %code: %%s [%severity%]'
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '⚠'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-nmap <silent> <C-u> <Plug>(ale_previous_wrap)
-nmap <silent> <C-d> <Plug>(ale_next_wrap)
+" let g:ale_sign_warning = 'Ψ'
+" nmap <silent> <C-u> <Plug>(ale_previous_wrap)
+" nmap <silent> <C-d> <Plug>(ale_next_wrap)
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
-let g:ale_open_list = 1
+let g:ale_open_list = 0
 "let g:ale_hover_cursor = 0
 "Set this if you want to.
 "This can be useful if you are combining ALE with
 "some other plugin which sets quickfix errors, etc.
 let g:ale_keep_list_window_open = 1
 "Disable warnings about trailing whitespace for Python files.
-"let b:ale_warn_about_trailing_whitespace = 0
+let b:ale_warn_about_trailing_whitespace = 0
 "Show 5 lines of errors (default: 10)
 let g:ale_list_window_size = 5
 
-"let g:ale_lint_on_text_changed = 'never'
-"let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_insert_leave = 1
 ""You can disable this option too
 ""if you don't want linters to run on opening a file
 "let g:ale_lint_on_enter = 0
 
-"let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰']
+let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰']
 
 let g:ale_linters = {
 \   'python': ['flake8'],
@@ -373,16 +393,12 @@ let g:ale_linters = {
 "\   'python': ['pylint'],
 \}
 
-"支持python2
+"支持python2语法检测
 let g:ale_python_flake8_executable = 'python'
 "let g:ale_python_flake8_executable = 'python3'
 "let g:ale_python_flake8_options = '-m flake8 --max-line-length=100 ' .
       "\ '--max-complexity=10 --ignore=E111,E114,E121,E125,E126,E127,E128,E129,E131,E133,E201,E202,E203,E211,E221,E222,E241,E251,E261,E303,E402,W503,E302,E305,E501'
-let g:ale_python_flake8_options = '-m flake8 --max-complexity=10 --ignore=E501,E302,E305,F401,F841,'
-
-
-
-
+let g:ale_python_flake8_options = '-m flake8 --max-complexity=10 --ignore=E501,E302,E305,F401,F841,E301,E731,E306,E722,E265,C901,E231,W391,E261,E262,'
 
 
 

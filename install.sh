@@ -26,12 +26,14 @@
     #python有静态加载和动态加载两种方式，我们选择动态加载，因此编译时参数打开动态链接
 
 安装方法与步骤：
-#1.将vim_tool.tar.bz2包放到用户的家目录下解压 tar -jxvf
-    下载地址 百度云链接：https://pan.baidu.com/s/1xmASXXm46SO7Jcvpcrto9Q:7777 
-    # 安装好vim_tool(vim8.2 和 gcc10) 之后用git仓库中的.vimrc 和 .bashrc 覆盖用户家目录下的
+#1.将vim_gcc_too.tar.gz包放到用户的家目录下解压 
+    链接：https://pan.baidu.com/s/1X6VcbfD1YUm65BI1BU-96g 
+    提取码：7777 
+    # 安装好vim_tool(vim8.2 和 gcc10.3) 之后用git仓库中的.vimrc 和 .bashrc 覆盖用户家目录下的
     下载 vim_config.tar.gz(插件) 放到用户家目录下解压安装
     链接：https://pan.baidu.com/s/1pJfXjn7_HYZjLOmnrqjjUQ 
     提取码：7777 
+    # 如果要将vim安装到root 目录下，则在/root/.bashrc 中添加 export VIMRUNTIME=/root/.usr/vim/share/vim/vim82  (https://bbs.archlinux.org/viewtopic.php?id=143087)
 
 #2.安装python3.6
     #将python3的包放到 /usr/local/目录下解压
@@ -51,6 +53,7 @@
     export PATH=$PATH:/usr/local/gtags/ 添加到 /etc/profile
     在 /etc/ld.so.conf 文件中添加  /usr/local/gtags/lib/
     #用pip install pygments 安装pygments(不要用pip3安装,python3对于pygments有一些bug,导致gtags不能正常使用)
+    安装pip2  python get-pip-2.py
     #或者将 pygments.tar.gz 的包放到/usr/lib/python2.7/site-packages/pygments 目录下解压
 
 #5.解决vim依赖库 ./vim_depend_lib 目录下存放了一些动态库供选择

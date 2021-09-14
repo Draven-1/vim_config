@@ -64,12 +64,12 @@ endif
 let &guicursor = &guicursor . ",a:blinkon0"
 
 """""""""""""""""""""""""""""""自定义配置""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let mapleader=";"       "将leader键设置为分号，默认为\
+let mapleader=';'       "将leader键设置为分号，默认为\
 
 call plug#begin('~/.vim/plugged')
 
 "YCM不能在此更新，更新后需要重新编译
-Plug 'Valloric/YouCompleteMe' 
+Plug 'Valloric/YouCompleteMe'
 
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
@@ -87,7 +87,6 @@ Plug 'mhinz/vim-signify'
 Plug 'kristijanhusak/vim-dirvish-git'
 Plug 'shougo/echodoc.vim'
 Plug 'dense-analysis/ale'
-"Plug 'shougo/defx.nvim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'skywind3000/gutentags_plus'
 Plug 'skywind3000/vim-preview'
@@ -126,8 +125,8 @@ set termguicolors
 " let g:neodark#background = '#202020'
 " let g:neodark#use_256color = 1
 " "背景色
-" "let g:neodark#terminal_transparent = 1  "打开的话高亮看不清
-" ""分屏边框实线
+" "let g:neodark#terminal_transparent = 1  
+" "分屏边框实线
 " "let g:neodark#solid_vertsplit = 1
 " colorscheme neodark
 
@@ -193,8 +192,6 @@ set updatetime=100
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o  "在注释行上下插入行不会自动插入注释字符
 set cursorline                          "高亮当前行
 "set cursorcolumn                        "高亮当前列
-"highlight CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=NONE guifg=NONE
-"highlight CursorColumn cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 
 "YCM
 let g:ycm_global_ycm_extra_conf = '.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
@@ -259,11 +256,6 @@ let g:ycm_filetype_whitelist = {
 			\ "make":1,
             \}
 
-
-"弹窗配色
-"highlight PMenu ctermfg=0 ctermbg=242 guifg=black guibg=darkgrey
-"highlight PMenuSel ctermfg=242 ctermbg=8 guifg=darkgrey guibg=black
-
 "nerdcommenter
 "快速注释
 let g:NERDCreateDefaultMappings = 1             "创建默认的映射
@@ -320,14 +312,13 @@ let g:gutentags_plus_nomap = 0      "使用默认的快捷键，将源码中定�
 
 "leaderf
 let g:Lf_HideHelp = 1
-let g:Lf_ShortcutF = "<c-p>"
+let g:Lf_ShortcutF = '<c-p>'
 "当前打开的buffer
 let g:Lf_ShortcutB = '<c-y>'
 "最近打开的文件
 noremap <c-h> :LeaderfMru<cr>
 "函数搜索
 noremap <c-t> :LeaderfFunction!<cr>
-" noremap <leader>fh :<C-U><C-R>=printf("LeaderfFunction! %s", "")<CR><CR>
 let g:Lf_RootMarkers = ['.project', '.root', '.svn', '.git']
 let g:Lf_WindowHeight = 0.30
 let g:Lf_CacheDirectory = expand('~/.vim/cache')
@@ -335,15 +326,12 @@ let g:Lf_CacheDirectory = expand('~/.vim/cache')
 let g:Lf_PreviewResult = {'Function':0, 'BufTag':0}
 
 "vim-preview
-"滚动预览窗口
-noremap <c-m> :PreviewScroll -1<cr>
-noremap <c-n> :PreviewScroll +1<cr>
+noremap <leader>n :PreviewScroll -1 <cr>
+noremap <leader>m :PreviewScroll +1 <cr>
 " inoremap <c-m> <c-\><c-o>:PreviewScroll -1<cr>
 " inoremap <c-n> <c-\><c-o>:PreviewScroll +1<cr>
 autocmd FileType qf nnoremap <silent><buffer> p :PreviewQuickfix<cr>
 autocmd FileType qf nnoremap <silent><buffer> P :PreviewClose<cr>
-" noremap <F4> :PreviewSignature!<cr>
-" inoremap <F4> <c-\><c-o>:PreviewSignature!<cr>
 
 "vim-gitgutter
 "let g:gitgutter_map_keys = 0                            "不映射任何键
@@ -387,11 +375,7 @@ let g:ale_lint_on_insert_leave = 1
 
 let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰']
 
-let g:ale_linters = {
-\   'python': ['flake8'],
-"\   'python': ['pyflakes'],
-"\   'python': ['pylint'],
-\}
+let g:ale_linters = { 'python': ['flake8'] }
 
 "支持python2语法检测
 let g:ale_python_flake8_executable = 'python'

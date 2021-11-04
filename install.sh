@@ -83,7 +83,11 @@
 
 #11.安装ctags
     yum install ctags
+ 
+#12.安装tmux 和 windows安装字体
 
-#11.收尾
+#13.windows term的配置
+
+#14.收尾
     sudo ldconfig
     source ~/.bashrc

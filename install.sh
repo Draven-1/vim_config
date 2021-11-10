@@ -85,6 +85,7 @@
     yum install ctags
  
 #12.安装tmux 和 windows安装字体
+    tmux 依赖库 libevent-2.0.so.5
 
 #13.windows term的配置
 

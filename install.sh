@@ -92,3 +92,11 @@
 #14.收尾
     sudo ldconfig
     source ~/.bashrc
+
+#15.安装zsh 和 oh my zsh
+    将zsh.tar.gz 解压到/usr/local/ 添加 /usr/local/zsh/bin/zsh 到文件/etc/shells, 添加环境变量。
+    将ohmyzsh.tar.gz 解压家目录。
+
+#最新安装方法
+    解压vim.tar.gz 和kit.tar.gz
+

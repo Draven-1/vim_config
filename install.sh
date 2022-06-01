@@ -65,6 +65,8 @@
     sudo rm /usr/lib64/libstdc++.so.6
     sudo cp $HOME/.usr/gcc/lib64/libstdc++.so.6.0.28 /usr/lib64/
     sudo ln -s /usr/lib64/libstdc++.so.6.0.28 /usr/lib64/libstdc++.so.6
+    or
+    ln -s /root/.usr/gcc/lib64/libstdc++.so.6.0.28 /usr/lib64/libstdc++.so.6
 
 #7.安装golang
     https://golang.org/doc/install

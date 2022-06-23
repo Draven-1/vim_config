@@ -81,7 +81,9 @@
     #用rpm 包安装
 
 #10.安装flake8 用于python语法检测
-    pip3 install flake8  #用压缩包安装有点麻烦，依赖的有点多。后续有时间可以整理一下相关库的压缩包
+    pip3 install flake8  #用压缩包安装有点麻烦，依赖的有点多。后续有时间可以整理一下相关库的压缩包。python3的语法检测。
+    pip2 install flake8  #python2的语法检测。需要先安装pip2。
+    
 
 #11.安装ctags
     yum install ctags

@@ -93,7 +93,9 @@
     tmux 依赖库 libevent-2.0.so.5
 
 #13.windows term的配置
-
+    安装 oh-my-posh winget install oh-my-posh 
+    安装Terminal-Icons Install-Module -Name Terminal-Icons -Repository PSGallery
+    
 #14.收尾
     sudo ldconfig
     source ~/.bashrc

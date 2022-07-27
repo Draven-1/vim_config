@@ -92,9 +92,11 @@
 #12.安装tmux 和 windows安装字体
     tmux 依赖库 libevent-2.0.so.5
 
-#13.windows term的配置
-    安装 oh-my-posh winget install oh-my-posh 
-    安装Terminal-Icons Install-Module -Name Terminal-Icons -Repository PSGallery
+#13.windows中的 nvim 配置
+    安装 oh-my-posh: winget install oh-my-posh 
+    安装Terminal-Icons: Install-Module -Name Terminal-Icons -Repository PSGallery
+    安装nvim 设置别名vim, 安装yarn(git上下载msi) 安装nodejs(node npm) 安装vim-plug(可以用打包的文件)
+    将win_nvim.zip 解压到C:\Users\lichao\AppData\Local\  目录下
     
 #14.收尾
     sudo ldconfig

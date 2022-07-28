@@ -95,8 +95,12 @@
 #13.windows中的 nvim 配置
     安装 oh-my-posh: winget install oh-my-posh 
     安装Terminal-Icons: Install-Module -Name Terminal-Icons -Repository PSGallery
-    安装nvim 设置别名vim, 安装yarn(git上下载msi) 安装nodejs(node npm) 安装vim-plug(可以用打包的文件)
-    将win_nvim.zip 解压到C:\Users\lichao\AppData\Local\  目录下
+    #安装nvim 设置别名vim, 安装yarn(git上下载msi) 安装nodejs(node npm) 安装vim-plug(可以用打包的文件)
+    #将win_nvim.zip 解压到C:\Users\lichao\AppData\Local\  目录下
+    安装vim: 官网安装，或者winget install vim 添加环境变量
+    安装yarn(git上下载msi) 安装nodejs(node npm) 安装vim-plug(可以用打包的文件)
+    编写C:\Program Files\Vim\_vimrc 文件(在vim 的安装目录中)
+    安装vim 插件重新下载或者直接解压包vim_coc_plugs.zip
     
 #14.收尾
     sudo ldconfig

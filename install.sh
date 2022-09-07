@@ -109,7 +109,14 @@
 #15.安装zsh 和 oh my zsh
     将zsh.tar.gz 解压到/usr/local/ 添加 /usr/local/zsh/bin/zsh 到文件/etc/shells, 添加环境变量。
     将ohmyzsh.tar.gz 解压家目录。
+  
+ #16.安装vim9
+    解压vim9.tar.gz到/usr/local/ 并添加环境变量
+    解压vim9_lib.zip 到 ~/.lib中，修改/etc/ld.so.conf 文件添加动态库加载路径  执行 ldconfig.
+    解决下面这个错误：yum install pango 
+    vim: symbol lookup error: /root/vim9_lib/libpango-1.0.so.0: undefined symbol: g_log_structured_standard
 
 #最新安装方法
     解压vim.tar.gz 和kit.tar.gz
+    
 

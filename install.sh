@@ -108,6 +108,7 @@
 
 #15.安装zsh 和 oh my zsh
     将zsh.tar.gz 解压到/usr/local/ 添加 /usr/local/zsh/bin/zsh 到文件/etc/shells, 添加环境变量。
+    chsh -s /usr/local/zsh/bin/zsh #切换默认bash
     将ohmyzsh.tar.gz 解压家目录。
   
  #16.安装vim9

@@ -64,9 +64,15 @@ apt install tmux
   #Set the color of the active window    
   #setw -g window-status-current-style fg=white,bold,bg=red     
 ###### 安装gtags
-apt install global   
+apt install global  
+pip2 install pygments   
+修改vimrc中的gtags.conf对应的路径   
+###### 安装ctags
+apt-get install universal-ctags   
 ###### 安装ycm和其它vim插件  
-解压 vim_plugs_ubuntu.tgz
+解压 vim_plugs_ubuntu.tgz     
+###### 安装NerdFonts字体
+/usr/share/fonts/   
 
 
 

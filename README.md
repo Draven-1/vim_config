@@ -1,5 +1,5 @@
 # vim_config
-### 支持centos 系统
+### centos 系统
 vim for c/c++、golang、 python、shell
 
 安装方法与步骤：阅读install.sh

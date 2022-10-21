@@ -6,11 +6,11 @@ vim for c/c++、golang、 python、shell
 
 ### ubuntu 系统
 ###### 1. 安装gcc
-apt update
-apt install build-essential
-apt-get install manpages-dev
-###### 2. 安装python2和pip2
-apt install python2 
-apt install python-pip
+apt update  
+apt install build-essential  
+apt-get install manpages-dev  
+###### 2. 安装python2和pip2  
+apt install python2   
+apt install python-pip  
 ###### 3. 安装tmux
-apt install tmux
+apt install tmux  

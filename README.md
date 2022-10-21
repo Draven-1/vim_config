@@ -63,5 +63,11 @@ apt install tmux
      
   #Set the color of the active window    
   #setw -g window-status-current-style fg=white,bold,bg=red     
+###### 安装gtags
+apt install global   
+###### 安装ycm和其它vim插件  
+解压 vim_plugs_ubuntu.tgz
+
+
 
 

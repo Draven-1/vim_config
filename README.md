@@ -13,7 +13,8 @@ apt-get install manpages-dev
 apt install python2   
 apt install python-pip  
 ###### 3. 安装tmux
-apt install tmux  
+apt install tmux 
+   
   #解除Ctrl+b 与前缀的对应关系  
   unbind C-b  
    

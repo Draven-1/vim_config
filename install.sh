@@ -118,7 +118,13 @@
     解决下面这个错误：yum install pango 
     vim: symbol lookup error: /root/vim9_lib/libpango-1.0.so.0: undefined symbol: g_log_structured_standard
 
+ #17. vim markdown相关插件的依赖
+    dnf install nodejs
+    npm install --global yarn
+
 #最新安装方法
-    解压vim.tar.gz 和kit.tar.gz
+    解压vim.tar.gz 和kit.tar.
+
+    
     
 

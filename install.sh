@@ -53,6 +53,7 @@
     export PATH=$PATH:/usr/local/gtags/ 添加到 /etc/profile
     在 /etc/ld.so.conf 文件中添加  /usr/local/gtags/lib/
     #用pip install pygments 安装pygments(不要用pip3安装,python3对于pygments有一些bug,导致gtags不能正常使用)
+    现在可以使用python3的pygments了，可以和python2的同时用。
     安装pip2  python get-pip-2.py
     #或者将 pygments.tar.gz 的包放到/usr/lib/python2.7/site-packages/pygments 目录下解压
 

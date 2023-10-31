@@ -154,14 +154,14 @@ alias history="history -i 0"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-alias fzf-tmux="fzf-tmux -p 60%,50%"
+alias ftmux="fzf-tmux -p 60%,50%"
 
-alias fzf-stmux="find * | fzf-tmux -p 60%,50% --prompt 'All> ' \
+alias fstmux="find * | fzf-tmux -p 60%,50% --prompt 'All> ' \
              --header 'CTRL-D: Directories / CTRL-F: Files' \
              --bind 'ctrl-d:change-prompt(Directories> )+reload(find * -type d)' \
              --bind 'ctrl-f:change-prompt(Files> )+reload(find * -type f)'
              "
 
-alias fzf-vim="fzf --print0 | xargs -0 -o vim"
+alias fvim="fzf --print0 | xargs -0 -o vim"
 
-alias fzf-mvim="fzf -m --print0 | xargs -0 -o vim"
+alias fmvim="fzf -m --print0 | xargs -0 -o vim"

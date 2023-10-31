@@ -6,7 +6,7 @@ let mapleader=';'       "将leader键设置为分号，默认为\
 call plug#begin('~/.vim/plugged')
 
 "YCM不能在此更新，更新后需要重新编译
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
@@ -354,28 +354,32 @@ let g:Lf_UseCache = 0
 " let g:Lf_IgnoreCurrentBufferName = 1
 
 let g:Lf_ShortcutF = '<c-p>'
+" let g:Lf_ShortcutF = '<a-h>'
 "当前打开的buffer
 let g:Lf_ShortcutB = '<c-y>'
 "最近打开的文件
 noremap <c-h> :LeaderfMru<cr>
 "函数搜索
-noremap <a-t> :LeaderfFunction!<cr>
-noremap <a-r> :LeaderfBufTag!<cr>
+" noremap <a-t> :LeaderfFunction!<cr>
+" noremap <a-r> :LeaderfBufTag!<cr>
+noremap <a-t> :LeaderfFunction<cr>
+noremap <a-r> :LeaderfBufTag<cr>
 " let g:Lf_WindowHeight = 0.30
-let g:Lf_WindowBreadth = 0.30
+" let g:Lf_PopupHeight = float2nr(&lines * 0.3)
+" let g:Lf_PopupWidth = &columns * 3 / 4
+let g:Lf_PopupWidth = 0.45
+let g:Lf_PopupHeight = 0.3
 
 " Show icons, icons are shown by default
 let g:Lf_ShowDevIcons = 1
 " If needs
-" set ambiwidth=double
+set ambiwidth=double
 
-let g:Lf_ShortcutF = "<leader>ff"
+" let g:Lf_ShortcutF = "<leader>ff"
 noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
 noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
 noremap <leader>ft :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
 noremap <leader>fl :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
-" noremap <C-B> :<C-U><C-R>=printf("Leaderf! rg --current-buffer -e %s ", expand("<cword>"))<CR>
-" noremap <C-F> :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR>
 
 " should use `Leaderf gtags --update` first
 let g:Lf_GtagsAutoGenerate = 0

@@ -29,6 +29,9 @@ Plug 'skywind3000/gutentags_plus'
 Plug 'skywind3000/vim-preview'
 Plug 'drmikehenry/vim-fixkey'
 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 " TODO  代码片段
 Plug 'honza/vim-snippets'
 
@@ -358,7 +361,8 @@ noremap <c-h> :LeaderfMru<cr>
 "函数搜索
 noremap <a-t> :LeaderfFunction!<cr>
 noremap <a-r> :LeaderfBufTag!<cr>
-let g:Lf_WindowHeight = 0.30
+" let g:Lf_WindowHeight = 0.30
+let g:Lf_WindowBreadth = 0.30
 
 " Show icons, icons are shown by default
 let g:Lf_ShowDevIcons = 1
@@ -494,7 +498,7 @@ let g:vmt_cycle_list_item_markers = 1
 
 " markdown-preview.nvim'
 " 指定预览主题，默认Github
-" let g:mkdp_markdown_css=''
+let g:mkdp_markdown_css=''
 " set to 1, nvim will open the preview window after entering the markdown buffer
 " default: 0
 let g:mkdp_auto_start = 0
@@ -592,7 +596,7 @@ let g:mkdp_filetypes = ['markdown']
 
 " set default theme (dark or light)
 " By default the theme is define according to the preferences of the system
-let g:mkdp_theme = 'dark'
+" let g:mkdp_theme = 'dark'
 
 " img-paste.vim
 autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>

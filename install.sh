@@ -122,6 +122,12 @@
     dnf install nodejs
     npm install --global yarn
 
+ #18. 安装fzf和fzf.vim; tmux安装了一些插件; 安装bat代替cat(bat可以和fzf联动)
+    涉及到相关的配置有.vimrc .tmux.conf .fzf.zsh .zshrc
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install
+    dnf install bat
+
 #最新安装方法
     解压vim.tar.gz 和kit.tar.
 

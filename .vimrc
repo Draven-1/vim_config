@@ -3,6 +3,8 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 
 let mapleader=';'       "将leader键设置为分号，默认为\
 
+set rtp+=/home/lc/.vim/plugged/YouCompleteMe
+
 call plug#begin('~/.vim/plugged')
 
 "YCM不能在此更新，更新后需要重新编译

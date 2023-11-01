@@ -127,6 +127,10 @@
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
     ~/.fzf/install
     dnf install bat
+    安装搜索工具ag
+    sudo dnf install the_silver_searche
+    安装搜索工具rg
+    sudo dnf install ripgrep 或者github下载官方编译好的二进制包(选择静态编译出来的)
 
 #最新安装方法
     解压vim.tar.gz 和kit.tar.
